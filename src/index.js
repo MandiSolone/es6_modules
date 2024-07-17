@@ -5,23 +5,24 @@ console.log("Hello World");
 
  let form = document.querySelector("#submitForm"); 
  let makeInput = document.querySelector("#makeInput"); 
- let modelInput = document.querySelector("#modleInput"); 
+ let modelInput = document.querySelector("#modelInput"); 
+ console.log(modelInput);
  let yearInput = document.querySelector("#yearInput"); 
  let makePara = document.querySelector("#car-make"); 
  let modelPara = document.querySelector("#car-model"); 
  let yearPara = document.querySelector("#car-year"); 
  let removeBtn = document.querySelector("#removeBtn"); 
- let uL = document.querySelector("#wishlist-title > ul");
+ let uL = document.querySelector("#ul");
 
 //Call the WishList constructor to create an instance from the WishList class
-let wishList = new WishList(); 
+let wishlist = new WishList(); 
 
 form.addEventListener("submit", addCar); 
 
 removeBtn.addEventListener("click", removeCar);  
 
 function updateDOMList(){
-   uL.innerHTML = ""; //clear the contents of ul 
+   uL.innerHTML = " "; //clear the contents of ul 
 
     wishlist.list.forEach((car) => {
         let liMakeModel  = document.createElement("li");
@@ -35,14 +36,14 @@ function showCarDetails(car){
     makePara.textContent = car.make
     modelPara.textContent = car.model
     yearPara.textContent = car.year
-    removeBtn.disabled = fales; //enable remove button 
+    removeBtn.disabled = false; //enable remove button 
 
      //This will set a custom data- attribute on the DOM element that corresponds with the selected element
      removeBtn.setAttribute("data-carId", car.id);
 }
 
 function addCar(event) {
-    event.preventDefualt(); 
+    event.preventDefault(); 
 
     let make = makeInput.value; 
     let model = modelInput.value; 
