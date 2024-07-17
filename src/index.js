@@ -6,7 +6,6 @@ console.log("Hello World");
  let form = document.querySelector("#submitForm"); 
  let makeInput = document.querySelector("#makeInput"); 
  let modelInput = document.querySelector("#modelInput"); 
- console.log(modelInput);
  let yearInput = document.querySelector("#yearInput"); 
  let makePara = document.querySelector("#car-make"); 
  let modelPara = document.querySelector("#car-model"); 
